@@ -1,0 +1,79 @@
+I have enabled SSH, installed XRDP, and Samba after updating the Raspberry Pi.
+
+```
+sudo apt-get install xrdp
+```
+```
+sudo apt-get install samba
+```
+
+You might get a message "If your computer gets IP address information from a DHCP server on the network, the DHCP server may
+also provide information about WINS servers ("NetBIOS name servers") present on the network. This requires a change to
+your snb.conf file so that DHCP-provided WINS settings will automatically be read from /var/lib/samba/dhcp.conf.
+The dhcp-client package must be installed to take advantage of this feature.
+Modify smb.conf to use WINS settings from DHCP?
+
+I just select No
+
+```
+sudo nano /etc/samba/smb.conf
+sudo smbpasswd -a pi
+sudo reboot
+```
+
+Log into your Raspberry PI with Putty and type "sudo apt-get install samba"
+You will get a prompt "Additional disk space will be used"
+You will be asked if you want to continue y/n, type y and press “enter”. Once done type in
+"sudo nano /etc/samba/smb.conf" to edit the config file. Delete the contents by pressing ctrl key and the K button.
+
+Copy this Configuration and paste it in to the file. Make sure to in-enlarge your putty screen to make sure it’s all in there.
+
+```
+[global]
+netbios name = Raspberry PI 2
+server string = The Pi File Center
+workgroup = WORKGROUP
+hosts allow =
+socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=65536 SO_SNDBUF=65536
+remote announce =
+remote browse sync =
+[HOMEPI]
+path = /home/pi
+comment = No comment
+browsable = yes
+read only = no
+valid users =
+writable = yes
+guest ok = yes
+public = yes
+create mask = 0777
+directory mask = 0777
+force user = root
+force create mode = 0777
+force directory mode = 0777
+hosts allow =
+[HOME]
+path = /
+comment = No comment
+browsable = yes
+read only = no
+valid users =
+writable = yes
+guest ok = yes
+public = yes
+create mask = 0777
+directory mask = 0777
+force user = root
+force create mode = 0777
+force directory mode = 0777
+hosts allow =
+```
+
+Exit by pressing ctrl and X keys then “Y” then the enter key. 
+
+Next create a user "pi" 
+To access the samba share.
+
+Type in "sudo smbpasswd -a pi", and type in the password you want to used, and press enter. 
+You will be asked to re-enter it, then press the enter key. Lastly restart the Samba Service by
+typing "sudo reboot"
