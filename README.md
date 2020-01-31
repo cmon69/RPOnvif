@@ -1,5 +1,6 @@
 RPOnvif - IN DEVELOPMENT STAGE -
 
+
 RPOnvif will stream a Raspberry PI's Camera, Desktop, Slideshow, Picture, or a Webpage to a Network Video Recorder (NVR). RPOnvif will be a virtual ONVIF IP camera which will capture a Raspberry Pi's screen, and webcams among other things, then stream them as real-time live video feeds from a Raspberry Pi. Using the ONVIF standard means that RPOnvif will be compatible with many Network Video Recorders (NVR's).
 
 Features - Autostart, Run in background, Auto discovery over the network. Stream the output of a browser / web page.
