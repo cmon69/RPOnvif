@@ -1,0 +1,36 @@
+Changes to be done
+
+line ? of readme. "Run ‘sudo raspi-config’ and enable the camera and reboot.",
+DONE but forgot , at "Run ‘sudo raspi-config’, enable the camera and reboot.",
+you did "Run ‘sudo raspi-config’ enable the camera and reboot." but it is better.
+
+README OVER
+
+temp file fixes and suggestions
+
+line ? "Log into your raspberry PI with Putty and type "sudo apt-get install samba""
+raspberry PI should be spelled Raspberry Pi DONE but Pi is still spelled PI, not that big of an issue though.
+
+line ? "Type in "sudo smbpasswd -a pi" type in the password you want to used and press enter."
+DONE, forgot the , but its still better, you could have uesd , in place of "and"
+
+line ? "You will be asked to re-enter it then press the enter key. Lastly restart the Samba Service by"
+you should say "You will be asked to re-enter it, then press the enter key. Lastly restart the Samba Service by" instead. UNCLEAR
+DONE, by the way "You will be asked to re-enter it then press the enter key."
+kinda sounds like something its asking, yet it only asks to re-enter it, same thing with my example, thats confusing.
+
+Add https://github.com/cmon69/gst-rpicamsrc
+Add https://github.com/cmon69/rpos
+
+Add
+Install GStreamer pipeline
+
+```
+sudo apt install gstreamer1.0-tools gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-omx-rpi gstreamer1.0-omx
+```
+
+Install Python Binding and gst-rtsp-server
+
+```
+sudo apt-get install python-gi gir1.2-gst-plugins-base-1.0 gir1.2-gst-rtsp-server-1.0
+```
